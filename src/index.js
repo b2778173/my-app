@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import demo4 from './demo4'
+import Demo5 from './demo5'
 import './index.css';
 
 function Square(props) {
@@ -141,7 +144,7 @@ class Game extends React.Component {
         const winnerline = calculateWinner(current.squares).line;
 
         const moves = history.map((step, move) => {
-          
+
             const desc = step.lastStep ?
                 step.lastStep :
                 'Go to game start';
@@ -181,6 +184,14 @@ class Game extends React.Component {
 // ========================================
 
 ReactDOM.render(
-    <Game />,
+
+    <Router>
+        <Demo5>
+            <span>hello</span>
+            <span>world</span>
+        </Demo5>
+        <Route path='/demo4/:name' component={demo4} />
+        <Route path='/game' component={Game} />
+    </Router>,
     document.getElementById('root')
 );
