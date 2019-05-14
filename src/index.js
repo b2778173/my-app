@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import demo4 from './demo4'
-import Demo5 from './demo5'
-import Demo6 from './demo6'
-import demo7 from './demo7'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import demo4 from './components/demo4'
+import Demo5 from './components/demo5'
+import Demo6 from './components/demo6'
+import demo7 from './components/demo7'
 import demo1 from './components/demo1'
 import Demo2 from './components/demo2'
 import demo3 from './components/demo3'
+import demo8 from './components/demo8'
+import demo9 from './components/demo9'
 import App from './components/app'
 import './index.css';
+
 
 function Square(props) {
 
@@ -188,26 +190,26 @@ class Game extends React.Component {
     }
 }
 
-class Demo72 extends React.Component {
-    constructor(props) {
-        super(props);
-        this.myTextInput = React.createRef();
-        this.handleClick = this.handleClick.bind(this);
-    }
-    handleClick () {
-        console.log('this=', this);
-        this.myTextInput.current.focus();
-    }
-    render() {
-        return (
-            <div>
-                <input type="text" ref={this.myTextInput} />
-                <input type="button" value="Focus the text input" onClick={this.handleClick} />
-            </div>
-        );
-    }
+// class Demo72 extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.myTextInput = React.createRef();
+//         this.handleClick = this.handleClick.bind(this);
+//     }
+//     handleClick() {
+//         console.log('this=', this);
+//         this.myTextInput.current.focus();
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <input type="text" ref={this.myTextInput} />
+//                 <input type="button" value="Focus the text input" onClick={this.handleClick} />
+//             </div>
+//         );
+//     }
 
-}
+// }
 
 // ========================================
 var data = null;
@@ -215,27 +217,24 @@ var data = null;
 ReactDOM.render(
 
     <Router>
-        <Demo72/>
-        <Demo5>
-            <span>hello</span>
-            <span>world</span>
-            <div>funck u</div>
-        </Demo5>
-        <Demo6 title={data} />
-        <Route path='/demo4/:name' component={demo4} />
-        <Route path='/demo7' component={demo7} />
-        <Route path='/game' component={Game} />
-    </Router>,
-    (
-        <Router>
+        <App exact path='/app'>
+            <Demo5>
+                <span>hello</span>
+                <span>world</span>
+                <div>funck u</div>
+            </Demo5>
             <Demo2 />
-            <App>
-                <Route path='/Game' component={Game} />
-                <Route path='/square' component={Square} />
-                <Route path='/demo1' component={demo1} />
-                <Route path='/demo3' component={demo3} />
-            </App>
-        </Router>
-    ),
+            <Route path='/app/square' component={Square} />
+            <Route path='/app/demo1' component={demo1} />
+            <Route path='/app/demo3' component={demo3} />
+            <Demo6 title={data} />
+            <Route path='/app/demo4/:name' component={demo4} />
+            <Route path='/app/demo7' component={demo7} />
+            <Route path='/app/game' component={Game} />
+            <Route path='/app/demo8' component={demo8} />
+            <Route path='/app/demo9' component={demo9}></Route>
+        </App>
+    </Router>,
+
     document.getElementById('root')
 );
