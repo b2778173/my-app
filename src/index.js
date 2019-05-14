@@ -5,6 +5,11 @@ import demo4 from './demo4'
 import Demo5 from './demo5'
 import Demo6 from './demo6'
 import demo7 from './demo7'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import demo1 from './components/demo1'
+import Demo2 from './components/demo2'
+import demo3 from './components/demo3'
+import App from './components/app'
 import './index.css';
 
 function Square(props) {
@@ -221,5 +226,16 @@ ReactDOM.render(
         <Route path='/demo7' component={demo7} />
         <Route path='/game' component={Game} />
     </Router>,
+    (
+        <Router>
+            <Demo2 />
+            <App>
+                <Route path='/Game' component={Game} />
+                <Route path='/square' component={Square} />
+                <Route path='/demo1' component={demo1} />
+                <Route path='/demo3' component={demo3} />
+            </App>
+        </Router>
+    ),
     document.getElementById('root')
 );
