@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import demo4 from './demo4'
 import Demo5 from './demo5'
+import Demo6 from './demo6'
+import demo7 from './demo7'
 import './index.css';
 
 function Square(props) {
@@ -181,16 +183,42 @@ class Game extends React.Component {
     }
 }
 
-// ========================================
+class Demo72 extends React.Component {
+    constructor(props) {
+        super(props);
+        this.myTextInput = React.createRef();
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick () {
+        console.log('this=', this);
+        this.myTextInput.current.focus();
+    }
+    render() {
+        return (
+            <div>
+                <input type="text" ref={this.myTextInput} />
+                <input type="button" value="Focus the text input" onClick={this.handleClick} />
+            </div>
+        );
+    }
 
+}
+
+// ========================================
+var data = null;
+// var data = 123;
 ReactDOM.render(
 
     <Router>
+        <Demo72/>
         <Demo5>
             <span>hello</span>
             <span>world</span>
+            <div>funck u</div>
         </Demo5>
+        <Demo6 title={data} />
         <Route path='/demo4/:name' component={demo4} />
+        <Route path='/demo7' component={demo7} />
         <Route path='/game' component={Game} />
     </Router>,
     document.getElementById('root')
