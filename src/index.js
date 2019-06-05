@@ -11,6 +11,7 @@ import demo3 from './components/demo3'
 import demo8 from './components/demo8'
 import demo9 from './components/demo9'
 import demo10 from './components/demo10'
+import demo11 from './components/demo11'
 import App from './components/app'
 import './index.css';
 
@@ -235,6 +236,7 @@ ReactDOM.render(
             <Route path='/app/demo8' component={demo8} />
             <Route path='/app/demo9' component={demo9}></Route>
             <Route path='/app/demo10/:name' component={demo10}></Route>
+            <Route path='/app/demo11' component={demo11}></Route>
         </App>
     </Router>,
 
