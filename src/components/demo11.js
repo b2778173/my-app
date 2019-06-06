@@ -13,6 +13,7 @@ export default class Demo11 extends React.Component {
     componentDidMount() {
         $.get(this.props.source, function (res) {
             let lastGist = res[0];
+            console.log('lastGist=', lastGist)
             this.setState({
                 username: lastGist.owner.login,
                 lastGistUrl: lastGist.html_url
