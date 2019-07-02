@@ -49,3 +49,13 @@ ul {
 .game-info {
     margin-left: 20px;
 }
+
+.content {
+    float: right;
+    width: 80%;
+}
+
+.sidebar {
+    float: left;
+    width: 15%;
+}

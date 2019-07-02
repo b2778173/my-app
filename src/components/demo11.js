@@ -23,7 +23,7 @@ export default class Demo11 extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='sidebar'>
                 {this.state.username}'s last gist is
                 <a href={this.state.lastGistUrl}>go</a>
             </div>

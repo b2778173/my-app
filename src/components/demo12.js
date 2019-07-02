@@ -1,4 +1,5 @@
 import React from 'react'
+import $ from 'jquery'
 
 export default class RepoList extends React.Component {
     constructor(props) {
@@ -11,7 +12,8 @@ export default class RepoList extends React.Component {
     }
 
     componentDidMount() {
-        this.props.promise.then(value => {
+
+        $.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars').then(value => {
             this.setState({
                 loading: false,
                 data: value,
@@ -25,7 +27,7 @@ export default class RepoList extends React.Component {
 
     render() {
         if (this.state.loading) {
-            return <span>loading...</span>
+            return <span className='content'>loading...</span>
         } else if (this.state.error) {
             return <span>Error : {this.state.error.message}</span>
         } else {
@@ -37,7 +39,7 @@ export default class RepoList extends React.Component {
             console.log('repoList=', repoList)
 
             return (
-                <main>
+                <main className='content'>
                     <h1>Most Popular JavaScript Projects in Github</h1>
                     <ol>{repoList}</ol>
                 </main>

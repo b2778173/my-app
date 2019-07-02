@@ -7,7 +7,7 @@ export default class demo2 extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className='sidebar'>
                 {this.state.names.map(function (name, index) {
                     return <div key={index}>Hello, {name}&nbsp;</div>
                 })}

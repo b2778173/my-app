@@ -1,20 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import $ from 'jquery'
 import demo4 from './components/demo4'
-import Demo5 from './components/demo5'
-import Demo6 from './components/demo6'
 import demo7 from './components/demo7'
 import demo1 from './components/demo1'
-import Demo2 from './components/demo2'
 import demo3 from './components/demo3'
 import demo8 from './components/demo8'
 import demo9 from './components/demo9'
 import demo10 from './components/demo10'
-import UserGist from './components/demo11'
 import Demo12 from './components/demo12'
 import App from './components/app'
+import toDoApp from './components/toDo/toDoApp'
 import './index.css';
 
 
@@ -216,31 +212,22 @@ class Game extends React.Component {
 // }
 
 // ========================================
-var data = null;
 // var data = 123;
 ReactDOM.render(
 
     <Router>
         <App exact path='/app'>
-            <Demo5>
-                <span>hello</span>
-                <span>world</span>
-                <div>funck u</div>
-            </Demo5>
-
-            <Demo12 promise={$.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars')} />
-            <UserGist source="https://api.github.com/users/octocat/gists" />
-            <Demo2 />
             <Route path='/app/square' component={Square} />
             <Route path='/app/demo1' component={demo1} />
             <Route path='/app/demo3' component={demo3} />
-            <Demo6 title={data} />
             <Route path='/app/demo4/:name' component={demo4} />
             <Route path='/app/demo7' component={demo7} />
             <Route path='/app/game' component={Game} />
             <Route path='/app/demo8' component={demo8} />
             <Route path='/app/demo9' component={demo9} />
             <Route path='/app/demo10/:name' component={demo10} />
+            <Route path='/app/demo12/' component={Demo12} />
+            <Route path='/app/toDoApp/' component={toDoApp}></Route>
 
         </App>
     </Router>,
