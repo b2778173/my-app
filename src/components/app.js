@@ -20,6 +20,7 @@ export default class app extends React.Component {
                     <li><Link to='/app/demo9'>demo9</Link></li>
                     <li><Link to='/app/demo10/30678'>demo10</Link></li>
                     <li><Link to='/app/demo12'>demo12</Link></li>
+                    <li><Link to='/app/toDoApp'>Memo</Link></li>
                 </ul>
                 <div className="content">{this.props.children}</div>
             </div>

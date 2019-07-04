@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import demo4 from './components/demo4'
-import demo7 from './components/demo7'
-import demo1 from './components/demo1'
-import demo3 from './components/demo3'
-import demo8 from './components/demo8'
-import demo9 from './components/demo9'
-import demo10 from './components/demo10'
-import Demo12 from './components/demo12'
+import demo4 from './components/example/demo4'
+import demo7 from './components/example/demo7'
+import demo1 from './components/example/demo1'
+import demo3 from './components/example/demo3'
+import demo8 from './components/example/demo8'
+import demo9 from './components/example/demo9'
+import demo10 from './components/example/demo10'
+import Demo12 from './components/example/demo12'
 import App from './components/app'
 import toDoApp from './components/toDo/toDoApp'
+import shoppingCart from './components/shoppingCart/App'
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+
 
 
 function Square(props) {
@@ -228,7 +232,7 @@ ReactDOM.render(
             <Route path='/app/demo10/:name' component={demo10} />
             <Route path='/app/demo12/' component={Demo12} />
             <Route path='/app/toDoApp/' component={toDoApp}></Route>
-
+            <Route path='/app/shoppingCart' component={shoppingCart}></Route>
         </App>
     </Router>,
 
