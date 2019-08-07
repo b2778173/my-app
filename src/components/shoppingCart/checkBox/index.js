@@ -8,18 +8,17 @@ export default class Checkcbox extends Component {
         }
     }
     toggleCheckboxChange() {
-        const { handleCheckboxChange, lable } = this.props;
+        const { handleCheckboxChange, label } = this.props;
         this.setState({ isChecked: !this.state.isChecked });
-        handleCheckboxChange(lable);
+        handleCheckboxChange(label);
     }
 
     render() {
         const { label, classes } = this.props;
-        console.log(this.props);
         const { isChecked } = this.state;
 
         return (
-            <div>
+            <div className={classes}>
                 <label>
                     <input
                         type='checkbox'

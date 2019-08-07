@@ -7,11 +7,13 @@ export default class app extends React.Component {
     }
 
     render() {
+        var data = { pathname: '/app/demo2', state: { name: '我是Link傳來的name' } };
         return (
             <div >
                 <h1>App</h1>
                 <ul className='sidebar'>
                     <li><Link to="/app/demo1">demo1</Link></li>
+                    <li><Link to={data}>demo2</Link></li>
                     <li><Link to="/app/demo3">demo3</Link></li>
                     <li><Link to="/app/demo4/30678">demo4</Link></li>
                     <li><Link to="/app/demo7">demo7</Link></li>
@@ -21,9 +23,13 @@ export default class app extends React.Component {
                     <li><Link to='/app/demo10/30678'>demo10</Link></li>
                     <li><Link to='/app/demo12'>demo12</Link></li>
                     <li><Link to='/app/toDoApp'>Memo</Link></li>
+                    <li><Link to='/app/Test'>Test</Link></li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/about/'>About</Link></li>
+                    <li><Link to='/users/'>users</Link></li>
                 </ul>
-                <div className="content">{this.props.children}</div>
-            </div>
+                <div className="content" style={{ backgroundColor: 'yellow', margin: '30px', textAlign: 'center' }}>{this.props.children}</div>
+            </div >
         )
     }
 }
