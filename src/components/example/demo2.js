@@ -5,6 +5,22 @@ export default class demo2 extends React.Component {
         super(props);
         this.state = { names: ['Alice', 'Emily', 'Kate'], test: null }
     }
+
+    componentDidMount() {
+        // for (var i = 0; i < 5; i++) {
+        //     (function (i) {
+        //         setTimeout(function () {
+        //             console.log(i);
+        //         }, 1000);
+        //     })(i)
+        // }
+
+        // for (var j = 0; j < 5; j++) {
+        //     setTimeout(function () {
+        //         console.log(j);
+        //     }, 1000);
+        // }
+    }
     componentDidUpdate() {
         console.log('test=', this.state.test);
     }
@@ -16,10 +32,11 @@ export default class demo2 extends React.Component {
                 })}
                 {this.props.children}
                 {/* 由Link state obj 傳入 */}
-                {this.props.location.state.name}<br/>
+                {this.props.location.state.name}<br />
                 {/* 由Route 傳入 */}
                 {this.props.name}
             </div>
         )
     }
 }
+

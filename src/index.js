@@ -1,26 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { BrowserRouter as Router, Route } from 'react-router-dom'
-// import demo4 from './components/example/demo4'
-// import demo7 from './components/example/demo7'
-// import Demo1 from './components/example/demo1'
-// import Demo2 from './components/example/demo2'
-// import demo3 from './components/example/demo3'
-// import demo8 from './components/example/demo8'
-// import demo9 from './components/example/demo9'
-// import demo10 from './components/example/demo10'
-// import Demo12 from './components/example/demo12'
-// import App from './components/app'
-// import toDoApp from './components/toDo/toDoApp'
-// import shoppingCart from './components/shoppingCart/App'
-// import Test from './components/example/test'
-import { Provider } from 'react-redux'
-import { store } from './components/example/demo13/store'
-import AppRouter from './components/example/router/react-router'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Demo4 from './components/example/demo4'
+import demo7 from './components/example/demo7'
+import demo1 from './components/example/demo1'
+import demo2 from './components/example/demo2'
+import demo3 from './components/example/demo3'
+import demo8 from './components/example/demo8'
+import demo9 from './components/example/demo9'
+import demo10 from './components/example/demo10'
+import Demo12 from './components/example/demo12'
+import App from './components/app'
+import toDoApp from './components/toDo/toDoApp'
+import shoppingCart from './components/shoppingCart/App'
+import Params from './components/example/passParams'
+import Test from './components/example/test'
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import './index.scss'
+import LifeCycle from './components/example/lifeCycle';
+import LifeParent from './components/example/lifeCycleParent'
+import Position from './components/example/position'
 
 
 export function Square(props) {
@@ -225,7 +225,28 @@ export default class Game extends React.Component {
 
 ReactDOM.render(
 
-    <Provider store={store}>
+    <Router>
+        <App exact path='/app'>
+            <Route path='/app/square' component={Square} />
+            <Route path='/app/demo1' component={demo1} />
+            <Route path='/app/demo2' component={demo2} />
+            <Route path='/app/demo3' component={demo3} />
+            <Route path='/app/demo4/:name' render={rest => <Demo4 {...rest} />} />
+            <Route path='/app/demo7' component={demo7} />
+            <Route path='/app/game' component={Game} />
+            <Route path='/app/demo8' component={demo8} />
+            <Route path='/app/demo9' component={demo9} />
+            <Route path='/app/demo10/:name' component={demo10} />
+            <Route path='/app/demo12/' component={Demo12} />
+            <Route path='/app/toDoApp/' component={toDoApp} />
+            <Route path='/app/shoppingCart' component={shoppingCart} />
+            <Route path='/app/Params' component={Params} />
+            <Route path='/app/test' component={Test} />
+            <Route path='/app/life-cycle' component={LifeCycle} />
+            <Route path='/app/life-parent' component={LifeParent} />
+            <Route path='/app/position' component={Position} />
+        </App>
+    </Router>,
 
         <AppRouter>
             {/* <Demo1 name='Kevin' /> */}
