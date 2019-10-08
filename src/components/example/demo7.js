@@ -30,8 +30,9 @@ export default class demo7 extends React.Component {
         super(props);
         this.myTextInput = React.createRef();
     }
-     handleClick() {
+    handleClick(msg) {
         console.log('this=', this);
+        console.log('msg=', msg)
         console.log('this.myTextInput', this.myTextInput)
         this.myTextInput.current.focus();
     }
@@ -40,7 +41,7 @@ export default class demo7 extends React.Component {
             <div>
                 <input type="text" ref={this.myTextInput} />
                 <input type="button" value="Focus the text input" onClick={this.handleClick.bind(this)} />
-                <input type="button" value="Focus the text input" onClick={() => this.handleClick} />
+                <input type="button" value="Focus the text input" onClick={(msg) => this.handleClick(msg)} />
                 <span>{typeof (this.handleClick)}</span>
             </div>
         );

@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import Counter from './counter'
 
 const initialState = { count: 0 };
-// 輸入
+// 輸入state return 處理後的 state
 function reducer(state = initialState, action) {
     switch (action.type) {
         case 'INCREMENT':
