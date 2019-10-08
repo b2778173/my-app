@@ -248,10 +248,5 @@ ReactDOM.render(
         </App>
     </Router>,
 
-        <AppRouter>
-            {/* <Demo1 name='Kevin' /> */}
-           
-        </AppRouter>
-    </Provider>,
     document.getElementById('root')
 );
